@@ -1,13 +1,17 @@
 COVID-19 Data Analysis Project
 
 Introduction
+
 This project analyzes COVID-19 data from the PortfolioProject database, focusing on various aspects such as deaths, vaccinations, and infection rates. The SQL queries provided here can be used to extract insights from the dataset.
 
 Dataset
+
 The dataset consists of two main tables: CovidDeaths and CovidVaccinations. The CovidDeaths table contains information about COVID-19 deaths, including location, date, total cases, new cases, total deaths, and population. The CovidVaccinations table contains data on COVID-19 vaccinations, including location, date, and new vaccinations.
 
 Queries
+
 Ordering CovidDeaths Data
+
 SQL: SELECT * FROM PortfolioProject..CovidDeaths ORDER BY 3,4
 
 Total Cases vs. Total Deaths
