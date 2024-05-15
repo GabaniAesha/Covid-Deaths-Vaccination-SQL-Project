@@ -12,42 +12,42 @@ The dataset consists of two main tables: CovidDeaths and CovidVaccinations. The 
 
 **Queries**
 
-Ordering CovidDeaths Data
+1. Ordering CovidDeaths Data
 
 SQL: SELECT * FROM PortfolioProject..CovidDeaths ORDER BY 3,4
 
 
-Total Cases vs. Total Deaths
+2. Total Cases vs. Total Deaths
 
 SQL: SELECT Location, Date, Total_Cases, Total_Deaths, (Total_Deaths/Total_Cases)*100 AS DeathPercentage FROM PortfolioProject..CovidDeaths WHERE Location LIKE '%states%' ORDER BY 1,2
 
 
-Population Infected Percentage
+3. Population Infected Percentage
 
 SQL: SELECT Location, Date, Total_Cases, Population, (Total_Cases/Population)*100 AS PercentPopulationInfected FROM PortfolioProject..CovidDeaths WHERE Location LIKE '%states%' ORDER BY 1,2
 
 
-Countries with Highest Infection Rate
+4. Countries with Highest Infection Rate
 
 SQL: SELECT Location, Population, MAX(Total_Cases) AS HighestInfectionCount, MAX((Total_Cases/Population))*100 AS PercentPopulationInfected FROM PortfolioProject..CovidDeaths GROUP BY Location, Population ORDER BY PercentPopulationInfected DESC
 
 
-Countries with Highest Death Count
+5. Countries with Highest Death Count
 
 SQL: SELECT Location, MAX(CAST(Total_Deaths AS INT)) AS TotalDeathCount FROM PortfolioProject..CovidDeaths WHERE Continent IS NOT NULL GROUP BY Location ORDER BY TotalDeathCount DESC
 
 
-Continents with Highest Death Count
+6. Continents with Highest Death Count
 
 SQL: SELECT Continent, MAX(CAST(Total_Deaths AS INT)) AS TotalDeathCount FROM PortfolioProject..CovidDeaths WHERE Continent IS NOT NULL GROUP BY Continent ORDER BY TotalDeathCount DESC
 
 
-Global Numbers
+7. Global Numbers
 
 SQL: SELECT Date, SUM(New_Cases) AS Total_Cases, SUM(CAST(New_Deaths AS INT)) AS Total_Deaths, SUM(CAST(New_Deaths AS INT))/SUM(New_Cases)*100 AS DeathPercentage FROM PortfolioProject..CovidDeaths WHERE Continent IS NOT NULL GROUP BY Date ORDER BY 1,2
 
 
-Percentage of Population Vaccinated
+8. Percentage of Population Vaccinated
 
 SQL: SELECT *, (RollingPeopleVaccinated/Population)*100 FROM PopvsVac
 
