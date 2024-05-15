@@ -1,16 +1,16 @@
-**##COVID-19 Data Analysis Project**
+**COVID-19 Data Analysis Project**
 
-Introduction
+**Introduction**
 
 This project analyzes COVID-19 data from the PortfolioProject database, focusing on various aspects such as deaths, vaccinations, and infection rates. The SQL queries provided here can be used to extract insights from the dataset.
 
 
-Dataset
+**Dataset**
 
 The dataset consists of two main tables: CovidDeaths and CovidVaccinations. The CovidDeaths table contains information about COVID-19 deaths, including location, date, total cases, new cases, total deaths, and population. The CovidVaccinations table contains data on COVID-19 vaccinations, including location, date, and new vaccinations.
 
 
-Queries
+**Queries**
 
 Ordering CovidDeaths Data
 
@@ -52,7 +52,7 @@ Percentage of Population Vaccinated
 SQL: SELECT *, (RollingPeopleVaccinated/Population)*100 FROM PopvsVac
 
 
-Usage
+**Usage**
 
 Clone the repository.
 
